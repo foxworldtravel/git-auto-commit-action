@@ -78,13 +78,13 @@ _push_to_github() {
         # Only add `--tags` option, if `$INPUT_TAGGING_MESSAGE` is set
         if [ -n "$INPUT_TAGGING_MESSAGE" ]
         then
-             git push origin --tags
+             git push origin --tags --force
         else
-             git push origin
+             git push origin --force
         fi
 
     else
-        git push --set-upstream origin "HEAD:$INPUT_BRANCH" --tags
+        git push --set-upstream origin "HEAD:$INPUT_BRANCH" --tags --force
     fi
 }
 
